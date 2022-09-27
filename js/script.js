@@ -23,3 +23,11 @@ function pigLatin(str){
           break;
         }
         }
+        newSentenceArray[index] = word.slice(vowelIndex) + word.slice(0, vowelIndex) +  "ay";
+      }
+  })
+  return newWord.join(" ") + lastWord;
+
+        }
+  
+console.log(pigLatin(str));

@@ -15,3 +15,11 @@ function pigLatin(str){
             newWord[index] = word + "way";
         }else if(word[0] === 'q'){
             newWord[index] = word.slice(2) + word.slice(0,2) + "ay";
+        }else {
+            let vowelIndex = 0
+      for (i = 0; i < word.length; i++) {  
+        if (vowels.includes(word[i])) {
+          vowelIndex = i;
+          break;
+        }
+        }

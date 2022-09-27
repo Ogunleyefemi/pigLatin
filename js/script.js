@@ -31,3 +31,13 @@ function pigLatin(str){
         }
   
 console.log(pigLatin(str));
+
+// UI LOGIC
+$(document).ready(function(){
+    $("#form").submit(function(event){
+      event.preventDefault();
+      let text = $("#input").val();
+      
+
+    })
+});

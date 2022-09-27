@@ -6,3 +6,7 @@ function pigLatin(str){
     newSentenceArray[newSentenceArray.length - 1] = lastWord.slice(0, lastWord.length - 2)
     lastWord = ".";
   }
+  newWord.forEach(function(word, index){
+    if (word === Number){
+        newWord[index] = word;
+    }else if (

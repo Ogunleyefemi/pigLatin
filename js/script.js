@@ -10,3 +10,8 @@ function pigLatin(str){
     if (word === Number){
         newWord[index] = word;
     }else if (
+        vowels.includes(word[0])
+        ){
+            newWord[index] = word + "way";
+        }else if(word[0] === 'q'){
+            newWord[index] = word.slice(2) + word.slice(0,2) + "ay";

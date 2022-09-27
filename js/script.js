@@ -1,11 +1,11 @@
-function pigLatin(str){
+function pigLatin(word){
     const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
-    let newWord = str.split(" ");
-    let lastWord = newSentenceArray[newSentenceArray.length - 1];
-  if (lastWord[lastWord.length - 1] === ".") {
-    newSentenceArray[newSentenceArray.length - 1] = lastWord.slice(0, lastWord.length - 2)
-    lastWord = ".";
-  }
+    let newWord = word.split(" ");
+//      let lastWord = newSentenceArray[newSentenceArray.length - 1];
+//    if (lastWord[lastWord.length - 1] === ".") {
+//      newSentenceArray[newSentenceArray.length - 1] = lastWord.slice(0, lastWord.length - 2)
+//      lastWord = ".";
+//    }
   newWord.forEach(function(word, index){
     if (word === Number){
         newWord[index] = word;
@@ -26,18 +26,17 @@ function pigLatin(str){
         newSentenceArray[index] = word.slice(vowelIndex) + word.slice(0, vowelIndex) +  "ay";
       }
   })
-  return newWord.join(" ") + lastWord;
-
-        }
+  return newWord.join(" ");
+        };
   
-console.log(pigLatin(str));
+// console.log(pigLatin(str));
 
 // UI LOGIC
 $(document).ready(function(){
     $("#form").submit(function(event){
       event.preventDefault();
       let text = $("#input").val();
-      
-
-    })
+      let piglatin = pigLatin(word);
+      $("#result").html(pigLatin(word));
+    });
 });

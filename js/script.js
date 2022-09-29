@@ -15,15 +15,24 @@ function pigLatin(word){
             newWord[index] = word + "way";
         }else if(word[0] === 'q'){
             newWord[index] = word.slice(2) + word.slice(0,2) + "ay";
-        }else {
-            let vowelIndex = 0
-      for (i = 0; i < word.length; i++) {  
-        if (vowels.includes(word[i])) {
-          vowelIndex = i;
-          break;
-        }
-        }
-        newSentenceArray[index] = word.slice(vowelIndex) + word.slice(0, vowelIndex) +  "ay";
+        }else{
+            // let consonantIndex = 0;
+            // for(i = 0; i < word.length; i++){
+            //     if(word.slice([i]) !== vowels){
+            //         consonantIndex = i;
+            //         break;
+            //     }
+            // }
+            // newWord[index] = word.slice(consonantIndex) + word.slice(0,consonantIndex) + "ay";
+
+             let vowelIndex = 0
+       for (i = 0; i < word.length; i++) {  
+         if (vowels.includes(word[i])) {
+           vowelIndex = i;
+           break;
+         }
+         }
+         newWord[index] = word.slice(vowelIndex) + word.slice(0, vowelIndex) +  "ay";
       }
   })
   return newWord.join(" ");
@@ -36,7 +45,7 @@ $(document).ready(function(){
     $("#form").submit(function(event){
       event.preventDefault();
       let text = $("#input").val();
-      let piglatin = pigLatin(word);
-      $("#result").html(pigLatin(word));
-    });
-});
+      const output = pigLatin(text);
+      $("#result").html(output);
+    })
+})
